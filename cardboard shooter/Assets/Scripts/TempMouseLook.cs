@@ -17,6 +17,6 @@ public class TempMouseLook : MonoBehaviour
         float hori = Input.GetAxis("Horizontal") * sen * Time.deltaTime;
         float verti = Input.GetAxis("Vertical") * sen * Time.deltaTime;
 
-        transform.Rotate(verti, hori, 0);
+        transform.Rotate(verti, hori, 0, Space.Self);
     }
 }
