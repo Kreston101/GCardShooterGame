@@ -12,8 +12,8 @@ public class Runner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = GameObject.Find("RunnerStart");
-        endPos = GameObject.Find("RunnerEnd");
+        //startPos = GameObject.Find("RunnerStart");
+        //endPos = GameObject.Find("RunnerEnd");
         rb = GetComponent<Rigidbody>();
     }
 

@@ -12,8 +12,8 @@ public class Plane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = GameObject.Find("PlaneStart");
-        endPos = GameObject.Find("PlaneEnd");
+        //startPos = GameObject.Find("PlaneStart");
+        //endPos = GameObject.Find("PlaneEnd");
         rb = GetComponent<Rigidbody>();
     }
 
