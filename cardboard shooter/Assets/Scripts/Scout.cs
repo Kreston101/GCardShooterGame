@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Peeker : MonoBehaviour
+public class Scout : MonoBehaviour
 {
     public GameObject startPos, endPos;
     public float speed = 2.5f;
@@ -14,8 +14,8 @@ public class Peeker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPos = GameObject.Find($"Peeker{id}Start");
-        endPos = GameObject.Find($"Peeker{id}End");
+        startPos = GameObject.Find($"Scout{id}Start");
+        endPos = GameObject.Find($"Scout{id}End");
         rb = GetComponent<Rigidbody>();
     }
 

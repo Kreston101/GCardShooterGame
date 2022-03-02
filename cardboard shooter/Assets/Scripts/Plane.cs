@@ -6,14 +6,15 @@ public class Plane : MonoBehaviour
 {
     public GameObject startPos, endPos;
     public float speed = 7.5f;
+    public int id;
 
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        //startPos = GameObject.Find("PlaneStart");
-        //endPos = GameObject.Find("PlaneEnd");
+        startPos = GameObject.Find($"Plane{id}Start");
+        endPos = GameObject.Find($"Plane{id}End");
         rb = GetComponent<Rigidbody>();
     }
 

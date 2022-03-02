@@ -6,14 +6,15 @@ public class Runner : MonoBehaviour
 {
     public GameObject startPos, endPos;
     public float speed = 5;
+    public int id;
 
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        //startPos = GameObject.Find("RunnerStart");
-        //endPos = GameObject.Find("RunnerEnd");
+        startPos = GameObject.Find($"Runner{id}Start");
+        endPos = GameObject.Find($"Runner{id}End");
         rb = GetComponent<Rigidbody>();
     }
 
