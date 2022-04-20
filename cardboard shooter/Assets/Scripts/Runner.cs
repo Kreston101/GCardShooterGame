@@ -7,12 +7,14 @@ public class Runner : MonoBehaviour
     public GameObject startPos, endPos;
     public float speed = 5;
     public int id;
+    public GameManager gm;
 
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         startPos = GameObject.Find($"Runner{id}Start");
         endPos = GameObject.Find($"Runner{id}End");
         rb = GetComponent<Rigidbody>();
@@ -30,6 +32,7 @@ public class Runner : MonoBehaviour
     {
         if (other.gameObject == endPos)
         {
+            gm.RemoveMe(gameObject);
             Destroy(gameObject, 0.5f);
         }
     }

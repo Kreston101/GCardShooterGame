@@ -29,7 +29,15 @@ public class GameManager : MonoBehaviour
 
     public void RemoveMe(GameObject toRemove)
     {
-        wave.Remove(toRemove);
+        foreach (GameObject target in wave)
+        {
+            if(target.name + "(Clone)" == toRemove.name)
+            {
+                Debug.Log("that, should not, have worked...");
+                wave.Remove(target);
+                break;
+            }
+        }
     }
 
     private void CreateWave()

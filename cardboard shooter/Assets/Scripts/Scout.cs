@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Scout : MonoBehaviour
@@ -7,6 +6,7 @@ public class Scout : MonoBehaviour
     public GameObject startPos, endPos;
     public float speed = 2.5f;
     public int id;
+    public GameManager gm;
 
     private Rigidbody rb;
     private bool peeking = true;
@@ -14,6 +14,7 @@ public class Scout : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         startPos = GameObject.Find($"Scout{id}Start");
         endPos = GameObject.Find($"Scout{id}End");
         rb = GetComponent<Rigidbody>();
@@ -40,18 +41,19 @@ public class Scout : MonoBehaviour
     {
         if (other.gameObject == endPos && peeking == true)
         {
-            Debug.Log("reversing");
+            //Debug.Log("reversing");
             StartCoroutine(Hide());
         }
         else if (other.gameObject == startPos && peeking == false)
         {
+            gm.RemoveMe(gameObject);
             Destroy(gameObject, 0.1f);
         }
     }
 
     IEnumerator Hide()
     {
-        Debug.Log("started hide");
+        //Debug.Log("started hide");
         yield return new WaitForSecondsRealtime(3f);
         peeking = false;
     }

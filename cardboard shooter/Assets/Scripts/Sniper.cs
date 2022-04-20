@@ -6,12 +6,15 @@ public class Sniper : MonoBehaviour
 {
     public float peekingHeight, startHeight;
     public float speed = 2f;
+    public GameManager gm;
+
     private Rigidbody rb;
     private Vector3 moveDist;
     private bool visible, retract = false;
 
     void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         rb = GetComponent<Rigidbody>();
         moveDist = new Vector3(0f, peekingHeight - startHeight, 0f);
     }
@@ -25,6 +28,7 @@ public class Sniper : MonoBehaviour
         else if (retract == true && transform.position.y >= peekingHeight)
         {
             rb.MovePosition(transform.position - moveDist * speed * Time.deltaTime);
+            gm.RemoveMe(gameObject);
             Destroy(gameObject, 0.1f);
         }
         else
