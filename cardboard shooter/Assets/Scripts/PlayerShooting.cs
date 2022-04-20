@@ -17,13 +17,17 @@ public class PlayerShooting : MonoBehaviour
         {
             if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log("input finger");
+                Debug.Log("input space");
                 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, Mathf.Infinity))
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
                     Debug.Log("Did Hit");
-                    gm.RemoveMe(hit.collider.gameObject);
-                    Debug.Log(hit.collider.gameObject);
+                    if (hit.collider.CompareTag("Target"))
+                    {
+                        gm.RemoveMe(hit.collider.gameObject);
+                        Destroy(hit.collider.gameObject);
+                        Debug.Log(hit.collider.gameObject);
+                    }
                 }
                 else
                 {
