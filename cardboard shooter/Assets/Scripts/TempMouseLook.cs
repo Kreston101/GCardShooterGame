@@ -14,9 +14,13 @@ public class TempMouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.R))
+        {
+            transform.Rotate(0, 0, 0, Space.Self);
+        }
         float hori = Input.GetAxis("Horizontal") * sen * Time.deltaTime;
         float verti = Input.GetAxis("Vertical") * sen * Time.deltaTime;
 
-        transform.Rotate(verti, hori, 0);
+        transform.Rotate(verti, hori, 0, Space.Self);
     }
 }
