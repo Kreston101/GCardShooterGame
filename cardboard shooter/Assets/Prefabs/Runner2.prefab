@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4761063021791622956}
   m_Layer: 0
   m_Name: Runner2
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   endPos: {fileID: 0}
   speed: 5
   id: 2
+  gm: {fileID: 0}
 --- !u!54 &4761063021791622956
 Rigidbody:
   m_ObjectHideFlags: 0

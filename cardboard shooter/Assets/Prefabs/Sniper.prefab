@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6855351247450334082}
   m_Layer: 0
   m_Name: Sniper
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   peekingHeight: 1
   startHeight: 0
   speed: 2
+  gm: {fileID: 0}
 --- !u!54 &6855351247450334082
 Rigidbody:
   m_ObjectHideFlags: 0

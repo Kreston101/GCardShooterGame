@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5788162538314564719}
   m_Layer: 0
   m_Name: Scout4
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   endPos: {fileID: 0}
   speed: 2.5
   id: 4
+  gm: {fileID: 0}
 --- !u!54 &5788162538314564719
 Rigidbody:
   m_ObjectHideFlags: 0
